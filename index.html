@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      body,
+      iframe {
+        margin: 0;
+        padding: 0;
+        border: none;
+      }
+      button {
+        position: fixed;
+        bottom: 0.25rem;
+        right: 1.5rem;
+        z-index: 10;
+      }
+
+      #chatbot {
+        /**edit this*/
+        height: 2.5rem;
+        width: 7rem;
+        background-image: linear-gradient(to right, #6c1df6, #d69bca);
+        cursor: pointer;
+        border-radius: 1rem;
+        color: white;
+      }
+      iframe.popup {
+        position: fixed;
+        bottom: 0;
+        right: 2rem;
+        z-index: 230;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="https://www.sciastra.com/"
+      title="description"
+      height="100%"
+      width="100%"
+    >
+    </iframe>
+    <button id="chatbot">Chat With Us</button>
+    <script>
+      const button = document.getElementById("chatbot");
+      button.addEventListener("click", function () {
+        if (document.querySelector(".popup")) return;
+
+        var popup = document.createElement("iframe");
+        popup.className = "popup";
+        popup.src =
+          "https://6463bbe7b0bcd70c5740b5c9--luminous-mochi-bbcc1b.netlify.app/";
+
+        popup.style.width = "400px";
+        popup.style.height = "300px";
+
+        popup.setAttribute("frameborder", "0");
+
+        document.body.appendChild(popup);
+      });
+    </script>
+  </body>
+</html>
