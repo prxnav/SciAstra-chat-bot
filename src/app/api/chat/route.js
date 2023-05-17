@@ -30,5 +30,5 @@ export async function POST(req) {
         ],
     max_tokens: 2000 - message.length, // Adjust as needed
   });
-  return response;
+  return new Response(await response.text());
 }
